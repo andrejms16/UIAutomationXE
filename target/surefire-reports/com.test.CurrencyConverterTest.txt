@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.test.CurrencyConverterTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 79.844 sec <<< FAILURE!
+getCurrencyConversionQuote(com.test.CurrencyConverterTest)  Time elapsed: 2.739 sec  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.test.CurrencyConverterTest.verifyConvertedAmount(CurrencyConverterTest.java:91)
+	at com.test.CurrencyConverterTest.verifyConversionResult(CurrencyConverterTest.java:81)
+	at com.test.CurrencyConverterTest.getCurrencyConversionQuote(CurrencyConverterTest.java:49)
+
