@@ -1,0 +1,77 @@
+ [
+    {
+      "amount": 1000,
+      "currencies": [
+        {
+          "symbol": "USD",
+          "description": "US Dollar",
+          "descriptionPlural": "US Dollars"
+        },
+        {
+          "symbol": "GBP",
+          "description": "British Pound",
+          "descriptionPlural": "British Pounds"
+        }
+      ]
+    },
+    {
+      "amount": 1100,
+      "currencies": [
+        {
+          "symbol": "EUR",
+          "description": "Euro",
+          "descriptionPlural": "Euros"
+        },
+        {
+          "symbol": "GBP",
+          "description": "British Pound",
+          "descriptionPlural": "British Pounds"
+        }
+      ]
+    },
+  {
+    "amount": 1300,
+    "currencies": [
+      {
+        "symbol": "CAD",
+        "description": "Canadian Dollar",
+        "descriptionPlural": "Canadian Dollars"
+      },
+      {
+        "symbol": "GBP",
+        "description": "British Pound",
+        "descriptionPlural": "British Pounds"
+      }
+    ]
+  },
+  {
+    "amount": 1400,
+    "currencies": [
+      {
+        "symbol": "AUD",
+        "description": "Australian Dollar",
+        "descriptionPlural": "Australian Dollars"
+      },
+      {
+        "symbol": "CHF",
+        "description": "Swiss Franc",
+        "descriptionPlural": "Swiss Francs"
+      }
+    ]
+  },
+  {
+    "amount": 1500,
+    "currencies": [
+      {
+        "symbol": "NOK",
+        "description": "Norwegian Krone",
+        "descriptionPlural": "Norwegian Kroner"
+      },
+      {
+        "symbol": "CHF",
+        "description": "Swiss Franc",
+        "descriptionPlural": "Swiss Francs"
+      }
+    ]
+  }
+ ]

@@ -1,11 +1,17 @@
-package com.test;
+package com.xe.test;
 
+import com.xe.data.ConversionDAO;
+import com.xe.model.Conversion;
 import com.xe.page.CurrencyConverterPage;
-import com.suporte.Driver;
+import com.xe.support.Driver;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 
@@ -25,20 +31,21 @@ public class CurrencyConverterTest {
         currencyConverterPage.closePopup();
     }
 
-    @DataProvider(name = "test1")
-    public static Object[][] ExchangeData() {
-        return new Object[][] {{10000.0 , "USD", "GBP"}, {11000.0 , "EUR", "GBP"}, {12000.0 , "CAD", "GBP"}, {13000.0 , "AUD", "CHF"}, {14000.0 , "NOK", "CHF"}};
+    @DataProvider(name = "conversions")
+    public static Object[] ConversionsData() throws IOException {
+        return new ConversionDAO().getCurrencies().toArray();
+    };
+
+
+    @DataProvider(name = "conversion")
+    public static Object[][] Conversion() throws IOException {
+        return new Object[][]{{new ConversionDAO().getCurrencies().get(0)}};
     }
 
-    @DataProvider(name = "test2")
-    public static Object[][] Exchange() {
-        return new Object[][] {{10000.0 , "USD", "GBP"}};
-    }
+    @Test(dataProvider = "conversions")
+    public void getCurrencyConversionQuote(Conversion conversion) {
 
-    @Test(dataProvider = "test1")
-    public void getCurrencyConversionQuote(Double amountInput, String currencyFrom, String currencyTo) {
-
-        fillCurrencyConversion(amountInput,currencyFrom,currencyTo);
+        fillCurrencyConversion(conversion.getAmount(),conversion.getCurrencies()[0].getSymbol(),conversion.getCurrencies()[1].getSymbol());
 
         Double amount = extractAmountValue(currencyConverterPage.getAmountInputValue());
         String fromCurrencyDescription = extractCurrencyDescription(currencyConverterPage.getFromCurrencyValue());
@@ -49,10 +56,10 @@ public class CurrencyConverterTest {
         verifyConversionResult(amount,fromCurrencyDescription,toCurrencyDescription);
     }
 
-    @Test(dataProvider = "test2")
-    public void swapCurrencyConversion(Double amountInput, String currencyFrom, String currencyTo) {
+    @Test(dataProvider = "conversion")
+    public void swapCurrencyConversion(Conversion conversion) {
 
-        fillCurrencyConversion(amountInput,currencyFrom,currencyTo);
+        fillCurrencyConversion(conversion.getAmount(),conversion.getCurrencies()[0].getSymbol(),conversion.getCurrencies()[1].getSymbol());
 
         Double amount = extractAmountValue(currencyConverterPage.getAmountInputValue());
         String fromCurrencyDescription = extractCurrencyDescription(currencyConverterPage.getFromCurrencyValue());

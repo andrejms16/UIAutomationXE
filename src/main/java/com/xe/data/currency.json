@@ -1,0 +1,39 @@
+{
+  "currencies": [
+    {
+      "symbol": "USD",
+      "description": "US Dollar",
+      "descriptionPlural": "US Dollars"
+    },
+    {
+      "symbol": "EUR",
+      "description": "Euro",
+      "descriptionPlural": "Euros"
+    },
+    {
+      "symbol": "GBP",
+      "description": "British Pound",
+      "descriptionPlural": "British Pounds"
+    },
+    {
+      "symbol": "CAD",
+      "description": "Canadian Dollar",
+      "descriptionPlural": "Canadian Dollars"
+    },
+    {
+      "symbol": "AUD",
+      "description": "Australian Dollar",
+      "descriptionPlural": "Australian Dollars"
+    },
+    {
+      "symbol": "CHF",
+      "description": "Swiss Franc",
+      "descriptionPlural": "Swiss Francs"
+    },
+    {
+      "symbol": "NOK",
+      "description": "Norwegian Krone",
+      "descriptionPlural": "Norwegian Kroner"
+    }
+  ]
+}

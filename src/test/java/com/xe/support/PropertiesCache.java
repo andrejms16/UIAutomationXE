@@ -1,4 +1,4 @@
-package com.suporte;
+package com.xe.support;
 
 import java.io.IOException;
 import java.io.InputStream;
